@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suburban Vanguard: The Provider's Path</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Sidebar: Player Stats -->
+        <aside class="sidebar left-sidebar">
+            <div class="panel controls-panel" style="margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                <button id="btn-theme" style="background: var(--bg-main); border: 1px solid var(--border-color); color: var(--text-dim); padding: 0.25rem 0.5rem; cursor: pointer; font-family: var(--font-mono); font-size: 0.8rem;">Theme: Modern</button>
+                <button id="btn-mute" style="background: var(--bg-main); border: 1px solid var(--border-color); color: var(--text-dim); padding: 0.25rem 0.5rem; cursor: pointer; font-family: var(--font-mono); font-size: 0.8rem;">🔊 Audio On</button>
+            </div>
+            <div class="panel">
+                <h2>The Provider</h2>
+                <div class="stat-group">
+                    <label>Finances (Liquidity)</label>
+                    <div class="stat-value text-green" id="stat-finances">$4,200</div>
+                </div>
+                <div class="stat-group">
+                    <label>Family Harmony</label>
+                    <div class="progress-bar"><div class="progress-fill fill-blue" id="bar-harmony" style="width: 65%;"></div></div>
+                    <div class="stat-value" id="stat-harmony">65/100</div>
+                </div>
+                <div class="stat-group">
+                    <label>Sanity</label>
+                    <div class="progress-bar"><div class="progress-fill fill-yellow" id="bar-sanity" style="width: 70%;"></div></div>
+                    <div class="stat-value" id="stat-sanity">70/100</div>
+                </div>
+                <div class="stat-group">
+                    <label>Provider Score</label>
+                    <div class="stat-value text-blue" id="stat-score">0</div>
+                </div>
+                <div class="stat-group">
+                    <label>Career Momentum</label>
+                    <div class="stat-value" id="stat-career">Level 3</div>
+                </div>
+            </div>
+            
+            <div class="panel">
+                <h2>System Alerts</h2>
+                <ul id="alert-list" class="alert-list">
+                    <li><span class="text-dim">No current shocks.</span></li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h2>Inventory</h2>
+                <ul id="inventory-list" class="alert-list">
+                    <li><span class="text-dim">Empty</span></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Terminal Area -->
+        <main class="terminal-area">
+            <div class="terminal-header">
+                <h1>SUBURBAN VANGUARD</h1>
+                <span class="subtitle">v0.1.0 - The Provider's Path</span>
+            </div>
+            <div id="output" class="terminal-output">
+                <!-- Text lines go here -->
+            </div>
+            <div class="terminal-input-wrapper">
+                <span class="prompt-symbol">&gt;</span>
+                <div style="position: relative; flex: 1;">
+                    <input type="text" id="cmd-suggestion" disabled autocomplete="off" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: transparent; border: none; color: var(--text-dim); opacity: 0.6; font-family: var(--font-mono); font-size: 1rem; z-index: 1; pointer-events: none;">
+                    <input type="text" id="cmd-input" autocomplete="off" spellcheck="false" autofocus placeholder="What do you do? (Type 'help')" style="position: relative; width: 100%; background: transparent; border: none; color: var(--text-main); font-family: var(--font-mono); font-size: 1rem; outline: none; z-index: 2;">
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar: Family & Time -->
+        <aside class="sidebar right-sidebar">
+            <div class="panel">
+                <h2>Time & Calendar</h2>
+                <div class="stat-group">
+                    <label>Current Phase</label>
+                    <div class="stat-value" id="stat-phase">Morning Phase</div>
+                </div>
+                <div class="stat-group">
+                    <label>Time Units (TU) Remaining</label>
+                    <div class="stat-value text-blue" id="stat-tu">21 / 21</div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>The Household</h2>
+                <div class="entity">
+                    <h3>Linda (Spouse)</h3>
+                    <div class="entity-stat">State: <span id="linda-state" class="text-green">Supportive</span></div>
+                    <div class="stat-group small">
+                        <label>Burnout</label>
+                        <div class="progress-bar"><div class="progress-fill fill-red" id="bar-burnout" style="width: 20%;"></div></div>
+                    </div>
+                </div>
+                <div class="entity">
+                    <h3>Emma (12)</h3>
+                    <div class="entity-stat">Focus: <span id="emma-focus">Wandering</span></div>
+                </div>
+                <div class="entity">
+                    <h3>Liam (9)</h3>
+                    <div class="entity-stat">Energy: <span id="liam-energy" class="text-orange">Rowdy</span></div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <script src="engine.js"></script>
+</body>
+</html>
